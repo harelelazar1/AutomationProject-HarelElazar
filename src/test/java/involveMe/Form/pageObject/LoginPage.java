@@ -1,6 +1,7 @@
 package involveMe.Form.pageObject;
 
 import involveMe.Form.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,7 @@ public class LoginPage extends BasePage {
     protected WebElement forgotPassword;
 
 
+    @Step("logim to involve me website")
     public void login(String titleName, String fieldData) {
         waitForPageFinishLoading();
         for (int i = 0; i < titleList.size(); i++) {
@@ -33,29 +35,14 @@ public class LoginPage extends BasePage {
                 break;
             }
         }
-}
+    }
 
-   public void clickLoginButton (){
+    @Step("click on login button")
+    public void clickLoginButton() {
         waitForPageFinishLoading();
         scrollToElement(loginButton);
         click(loginButton);
-   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 }
