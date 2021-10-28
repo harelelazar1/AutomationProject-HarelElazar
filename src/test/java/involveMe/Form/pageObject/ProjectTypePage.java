@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class ProjectPage extends BasePage {
-    public ProjectPage(WebDriver driver) {
+public class ProjectTypePage extends BasePage {
+    public ProjectTypePage(WebDriver driver) {
         super(driver);
     }
 

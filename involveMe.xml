@@ -4,7 +4,7 @@
 
     <test name="Involve-Me-Form">
         <packages>
-            <package name="involveMe.Form.tests.Form"/>
+            <package name="involveMe.Form.tests.FormTest"/>
         </packages>
     </test> <!-- Test -->
 
