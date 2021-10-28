@@ -19,6 +19,8 @@ public class EditProjectPage extends BasePage {
     protected WebElement startEditingButton;
     @FindBy(css = ".form-group #project-name")
     protected WebElement projectNameField;
+    @FindBy(css = ".card-block.project-design-list .content-item-menu-container div> .content-menu-item")
+    protected WebElement contentElement;
 
 
 

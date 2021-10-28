@@ -29,8 +29,6 @@ public class MainPage extends BasePage {
 
 
 
-
-
     @Step("Click On start button ")
     public void clickOnStartButton () {
         waitForTextToBeInElement(startButton,"Start");
@@ -102,12 +100,14 @@ public class MainPage extends BasePage {
         }
     }
 
-
     @Step("click Create Project Button")
     public void clickCreateProjectButton() {
         waitForPageFinishLoading();
-        waitForElementToBeClickable(createProjectButton);
-        click(createProjectButton);
+        if (isDisplayed(createProjectButton)) {
+            click(createProjectButton);
+        } else{
+            click(startButton);
+        }
     }
 
 

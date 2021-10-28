@@ -1,10 +1,7 @@
 package involveMe.Form.tests;
 
 
-import involveMe.Form.pageObject.LoginPage;
-import involveMe.Form.pageObject.MainPage;
-import involveMe.Form.pageObject.ProjectTypePage;
-import involveMe.Form.pageObject.Templates;
+import involveMe.Form.pageObject.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.testng.annotations.BeforeClass;
@@ -16,6 +13,7 @@ public class FormTest extends BaseTest {
     MainPage mainPage;
     ProjectTypePage projectPage;
     Templates templates;
+    EditProjectPage editProjectPage;
 
     @BeforeClass
     @Step("Edit role")
@@ -25,6 +23,8 @@ public class FormTest extends BaseTest {
         mainPage = new MainPage(driver);
         projectPage = new ProjectTypePage(driver);
         templates = new Templates(driver);
+        editProjectPage = new EditProjectPage(driver);
+
         loginPage.login("Email","harelelazar@gmail.com");
         loginPage.login("Password","Q1w2e3r401!");
         loginPage.clickLoginButton();
@@ -33,11 +33,14 @@ public class FormTest extends BaseTest {
     @Test(description = "create new form")
      @Description("login and create new form")
     public void createForm01(){
+
         mainPage.clickCreateProjectButton();
         projectPage.chooseProjectName("Form");
         templates.clickOnButtonFromTemplate("COVID-19 Event Registration" , "Choose");
+        editProjectPage.enterProjectName("Harel New Project");
+        editProjectPage.chooseProjectType();
 
-    }
+     }
 
 
 

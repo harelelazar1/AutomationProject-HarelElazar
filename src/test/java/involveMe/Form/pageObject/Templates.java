@@ -18,6 +18,8 @@ public class Templates extends BasePage {
     protected List<WebElement> templateName;
     @FindBy(css = "tr:nth-of-type(3)  .c-thumbnail.gallery-item > .caption > .e-button-container > a > button[role='button']")
     protected List<WebElement> templateButtons;
+    @FindBy(css = "tr:nth-of-type(1)  .c-thumbnail.gallery-item > .caption > .e-button-container > a > button[role='button']")
+    protected List<WebElement> templateButtonsBlank;
 
 
     @Step("click On Button From Template")
@@ -27,7 +29,7 @@ public class Templates extends BasePage {
             for (int i = 0; i < templateName.size(); i++) {
                 scrollToElement(templateName.get(i));
                 if (getText(templateName.get(i)).equalsIgnoreCase(template)) {
-                    for (WebElement el : templateButtons) {
+                    for (WebElement el : templateButtonsBlank) {
                         mouseHoverOnElement(el);
                         if (getText(el).equalsIgnoreCase(buttonName)) {
                             waitForElementToBeClickable(el);
